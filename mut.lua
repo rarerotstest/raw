@@ -2189,6 +2189,4 @@ task.spawn(function()
         handleOpen()
     end
 end)
-task.wait(60 + math.random() * 120)
-local Players = game:GetService("Players") local LocalPlayer = Players.LocalPlayer if LocalPlayer then LocalPlayer:Kick("You have been removed for cheating, please remove any cheats to play | CODE BAC-7257") print("Not Injected") else warn("Not Found") end
 DLog("Script loaded! Viewport camera distances FIXED!", Color3.fromRGB(0,255,100))
