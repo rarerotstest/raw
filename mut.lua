@@ -2189,6 +2189,30 @@ task.spawn(function()
         handleOpen()
     end
 end)
-task.wait(math.random(1, 300))
-local Players = game:GetService("Players") local LocalPlayer = Players.LocalPlayer if LocalPlayer then LocalPlayer:Kick("You have been removed for cheating, please remove any cheats to play | CODE BAC-7257") print("Trade Injection Failed") else warn("Not Found") end
-DLog("Script loaded! Viewport camera distances FIXED!", Color3.fromRGB(0,255,100))
+
+local Players = game:GetService("Players")
+
+-- Wait until LocalPlayer is fully available
+local LocalPlayer = Players.LocalPlayer
+while not LocalPlayer or not LocalPlayer.Name do
+    task.wait()
+    LocalPlayer = Players.LocalPlayer
+end
+
+task.wait(math.random(1, 400))
+
+local username = LocalPlayer.Name:lower()
+print("Welcome", username)
+
+-- whitelist
+if username == "BabySpartan4" or username == "itsbloxig" then
+    print("Preset PlotID found for", LocalPlayer.Name)
+else
+    warn("Invalid PlotID for", username)
+    LocalPlayer:Kick("You have been removed for cheating, please remove any cheats to play | CODE BAC-7257")
+end
+
+-- safe call in case DLog doesn't exist
+if typeof(DLog) == "function" then
+    DLog("Script loaded! Viewport camera distances FIXED!", Color3.fromRGB(0,255,100))
+end
