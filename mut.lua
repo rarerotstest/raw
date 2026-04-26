@@ -61,12 +61,12 @@ local VIEWPORT_CAMERA_MULTIPLIERS = {
 
 
     ["Garama and Madundung"]    = 1.237,
-    ["Hydra Dragon Cannelloni"] = 1.506,
-    ["Dragon Gingerini"]        = 1.492,
-    ["Ginger Gerat"]            = 1.328,
+    ["Hydra Dragon Cannelloni"] = 1,
+    ["Dragon Gingerini"]        = 0.9,
+    ["Ginger Gerat"]            = 0.9,
     ["Signore Carapace"]        = 1.468,
-    ["Digi Narwhal"]            = 1.482,
-    ["Cerberus"]                = 1.482,
+    ["Digi Narwhal"]            = 0.9,
+    ["Cerberus"]                = 0.9,
     ["Love Love Bear"]          = 1.151,
     ["La Supreme Combinasion"]          = 1.151,
 }
