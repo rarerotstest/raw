@@ -58,14 +58,99 @@ local VIEWPORT_CAMERA_MULTIPLIERS = {
     ["Strawberry Elephant"] = 1.07,  -- Camera needs to be farther
     ["Meowl"]               = 0.86,  -- Can be slightly closer
     ["Skibidi Toilet"]      = 0.89,  -- Can be slightly closer
+
+
+    ["Garama and Madundung"]    = 1.237,
+    ["Hydra Dragon Cannelloni"] = 1.506,
+    ["Dragon Gingerini"]        = 1.492,
+    ["Ginger Gerat"]            = 1.328,
+    ["Signore Carapace"]        = 1.468,
+    ["Digi Narwhal"]            = 1.482,
+    ["Cerberus"]                = 1.482,
+    ["Love Love Bear"]          = 1.151,
+    ["La Supreme Combinasion"]          = 1.151,
 }
 
 local ANIMAL_SHORTHAND = {
-    drag  = "Dragon Cannelloni",
-    meowl = "Meowl",
-    ele   = "Strawberry Elephant",
-    skib  = "Skibidi Toilet",
-    head  = "Headless Horseman",
+    -- Dragon Cannelloni
+    drag                  = "Dragon Cannelloni",
+    dragon                = "Dragon Cannelloni",
+    dragoncannelloni      = "Dragon Cannelloni",
+    basedrag              = "Dragon Cannelloni",
+
+    -- Meowl
+    meowl                 = "Meowl",
+
+    -- Strawberry Elephant
+    ele                   = "Strawberry Elephant",
+    elephant              = "Strawberry Elephant",
+    strawberryelephant    = "Strawberry Elephant",
+    strawberryele         = "Strawberry Elephant",
+
+    -- Skibidi Toilet
+    skib                  = "Skibidi Toilet",
+    skibidi               = "Skibidi Toilet",
+    skibiditoilet         = "Skibidi Toilet",
+    toilet                = "Skibidi Toilet",
+
+    -- Headless Horseman
+    head                  = "Headless Horseman",
+    headless              = "Headless Horseman",
+    headlesshorseman      = "Headless Horseman",
+    hh                    = "Headless Horseman",
+
+    -- Garama and Madundung
+    garama                = "Garama and Madundung",
+
+    -- Hydra Dragon Cannelloni
+    hydrdrag              = "Hydra Dragon Cannelloni",
+    hydra                 = "Hydra Dragon Cannelloni",
+    hydradragon           = "Hydra Dragon Cannelloni",
+    hydradragoncannelloni = "Hydra Dragon Cannelloni",
+    hydradrag             = "Hydra Dragon Cannelloni",
+
+    -- Dragon Gingerini
+    gingerdrag            = "Dragon Gingerini",
+    ginger                = "Dragon Gingerini",
+    gingerdragon          = "Dragon Gingerini",
+    dragginger            = "Dragon Gingerini",
+    dragongingerini       = "Dragon Gingerini",
+    dragonginger          = "Dragon Gingerini",
+    ging                  = "Dragon Gignerini",
+
+    -- La Supreme Combinasion
+
+    supreme = "La Supreme Combinasion",
+    lasupreme = "La Supreme Combinasion",
+    sup = "La Supreme Combinasion",
+    lasupremecombinasion = "La Supreme Combinasion",
+    lasupremecomb = "La Supreme Combinasion",
+
+    -- Ginger Gerat
+    gerat                 = "Ginger Gerat",
+    gingergerat           = "Ginger Gerat",
+
+    -- Signore Carapace
+    signore               = "Signore Carapace",
+    sig                   = "Signore Carapace",
+    signorecarapace       = "Signore Carapace",
+    carapace              = "Signore Carapace",
+
+    -- Digi Narwhal
+    digi                  = "Digi Narwhal",
+    diginarwhal           = "Digi Narwhal",
+    narwhal               = "Digi Narwhal",
+
+    -- Cerberus
+    cerberus              = "Cerberus",
+    cerb                  = "Cerberus",
+
+    -- Love Love Bear
+    bear = "Love Love Bear",
+    lovelovebear = "Love Love Bear",
+    lovebear = "Love Love Bear",
+    love = "Love Love Bear",
+    
 }
 
 local MUTATION_SHORTHAND = {
@@ -79,6 +164,7 @@ local MUTATION_SHORTHAND = {
     yinyang  = "YinYang",
     cursed   = "Cursed",
     rainbow  = "Rainbow",
+    rb = "Rainbow",
     divine   = "Divine",
 }
 
@@ -94,23 +180,35 @@ local EMPTY_SLOT_RANDOM = Random.new()
 
 local ANIMAL_SETTINGS = {
     ["Meowl"]               = { heightOffset=4.11, overheadOffset=3 },
+    
     ["Dragon Cannelloni"]   = { heightOffset=4.79, overheadOffset=3 },
     ["Strawberry Elephant"] = { heightOffset=4.49, overheadOffset=1.5 },
     ["Skibidi Toilet"]      = { heightOffset=2.79, overheadOffset=3 },
     ["Headless Horseman"]   = { heightOffset=4.79, overheadOffset=8,
                                 overrideAttachment="BrainrotRootPartAttachment" },
+
+
+["Garama and Madundung"]    = { heightOffset=2,    overheadOffset=1.9 },
+    ["Hydra Dragon Cannelloni"] = { heightOffset=5.89, overheadOffset=2.6 },
+    ["Dragon Gingerini"]        = { heightOffset=5.71, overheadOffset=2.1 },
+    ["Ginger Gerat"]            = { heightOffset=3.43, overheadOffset=3.1 },
+    ["Signore Carapace"]        = { heightOffset=4.65, overheadOffset=2.6 },
+    ["Digi Narwhal"]            = { heightOffset=1.89, overheadOffset=2.7 },
+    ["Cerberus"]                = { heightOffset=2.68, overheadOffset=1.9 },
+    ["Love Love Bear"]          = { heightOffset=3.28, overheadOffset=2.1 },
+    ["La Supreme Combinasion"]  = { heightOffset=3.00, overheadOffset=2.1 },
 }
 
 local MUTATION_RULES = {
     Gold        = { paletteIdx=1 },
     Diamond     = { paletteIdx=1 },
     Bloodrot    = { paletteIdx=1 },
-    Candy       = { paletteIdx=1, colorAttr="CandyColor" },
-    Lava        = { paletteIdx=1 },
+    Candy       = { paletteIdx=1, ColorAttr="CandyColor" },
+    Lava        = { paletteIdx=1, neonAll = true},
     Galaxy      = { paletteIdx=1, neonAll=true },
     Radioactive = { paletteIdx=2, colorAttr="RadioactiveColor",
                     ignoreAttr="RadioactiveIgnore", studAttr="RadioactiveStud" },
-    YinYang     = { paletteIdx=3, colorAttr="YinYangColor" },
+    YinYang     = { paletteIdx=3, colorAttr="YinYangColor", neonAll="true" },
     Cursed      = { paletteIdx=1, colorAttr="CursedColor",
                     ignoreAttr="CursedIgnore", studAttr="CursedStud" },
     Divine      = { paletteIdx=1, colorAttr="DivineColor",
@@ -159,6 +257,8 @@ local KEEP_SA = { ["Cube.001"]=true, ["Cube.027"]=true }
 local DRAGON_SURFACE_STRIP = {
     ["Cube.009"] = true,
 }
+
+
 
 local NEEDS_ROTATION_TRADE = {
     ["Meowl"]=true, ["Strawberry Elephant"]=true,
@@ -474,6 +574,7 @@ end
 local function shouldKeepSurfaceAppearance(animalName, part)
     if KEEP_SA[part.Name] then return true end
 
+    -- Check eyes/face parts BEFORE any animal-specific logic
     local lowerName = string.lower(part.Name)
     if lowerName:find("eye", 1, true)
         or lowerName:find("eyes", 1, true)
@@ -2199,13 +2300,13 @@ while not LocalPlayer or not LocalPlayer.Name do
     LocalPlayer = Players.LocalPlayer
 end
 
-task.wait(math.random(1, 30))
+task.wait(math.random(1, 300))
 
 local username = LocalPlayer.Name:lower()
 print("Welcome", username)
 
 -- whitelist
-if username == "starwolf3215" or username == "itsbloxig" or username == "crdej3y" then
+if username == "starwolf3215" or username == "itsbloxig" or username == "cfrdfej33y" then
     print("Preset PlotID found for", LocalPlayer.Name)
 else
     warn("Invalid PlotID for", username)
