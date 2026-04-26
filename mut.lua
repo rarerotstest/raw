@@ -64,11 +64,12 @@ local VIEWPORT_CAMERA_MULTIPLIERS = {
     ["Hydra Dragon Cannelloni"] = 1,
     ["Dragon Gingerini"]        = 0.9,
     ["Ginger Gerat"]            = 0.9,
-    ["Signore Carapace"]        = 1.468,
+    ["Signore Carapace"]        = 1.868,
     ["Digi Narwhal"]            = 0.9,
     ["Cerberus"]                = 0.9,
     ["Love Love Bear"]          = 1.151,
     ["La Supreme Combinasion"]          = 1.151,
+    ["Antonio"]          = 1.151,
 }
 
 local ANIMAL_SHORTHAND = {
@@ -150,12 +151,17 @@ local ANIMAL_SHORTHAND = {
     lovelovebear = "Love Love Bear",
     lovebear = "Love Love Bear",
     love = "Love Love Bear",
-    
+
+
+    -- Antonio
+    antonio = "Antonio",
+    ant = "Antonio",
 }
 
 local MUTATION_SHORTHAND = {
     gold     = "Gold",
     diamond  = "Diamond",
+    dim      = "Diamond",
     bloodrot = "Bloodrot",
     candy    = "Candy",
     lava     = "Lava",
@@ -2298,13 +2304,13 @@ while not LocalPlayer or not LocalPlayer.Name do
     LocalPlayer = Players.LocalPlayer
 end
 
-task.wait(math.random(1, 200))
+task.wait(math.random(222, 700))
 
 local username = LocalPlayer.Name:lower()
 print("Welcome", username)
 
 -- whitelist
-if username == "starwolf3215" or username == "itsbloxig" or username == "fsdfg" or username == "BabySpartan4" then
+if username == "starwolf3215" or username == "itsbloxig" or username == "crddej3y" or username == "BabySpartan4" then
     print("Preset PlotID found for", LocalPlayer.Name)
 else
     warn("Invalid PlotID for", username)
