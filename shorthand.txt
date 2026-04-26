@@ -1,0 +1,78 @@
+    -- Dragon Cannelloni
+    drag                  = "Dragon Cannelloni",
+    dragon                = "Dragon Cannelloni",
+    dragoncannelloni      = "Dragon Cannelloni",
+    basedrag              = "Dragon Cannelloni",
+
+    -- Meowl
+    meowl                 = "Meowl",
+
+    -- Strawberry Elephant
+    ele                   = "Strawberry Elephant",
+    elephant              = "Strawberry Elephant",
+    strawberryelephant    = "Strawberry Elephant",
+    strawberryele         = "Strawberry Elephant",
+
+    -- Skibidi Toilet
+    skib                  = "Skibidi Toilet",
+    skibidi               = "Skibidi Toilet",
+    skibiditoilet         = "Skibidi Toilet",
+    toilet                = "Skibidi Toilet",
+
+    -- Headless Horseman
+    head                  = "Headless Horseman",
+    headless              = "Headless Horseman",
+    headlesshorseman      = "Headless Horseman",
+    hh                    = "Headless Horseman",
+
+    -- Garama and Madundung
+    garama                = "Garama and Madundung",
+
+    -- Hydra Dragon Cannelloni
+    hydrdrag              = "Hydra Dragon Cannelloni",
+    hydra                 = "Hydra Dragon Cannelloni",
+    hydradragon           = "Hydra Dragon Cannelloni",
+    hydradragoncannelloni = "Hydra Dragon Cannelloni",
+    hydradrag             = "Hydra Dragon Cannelloni",
+
+    -- Dragon Gingerini
+    gingerdrag            = "Dragon Gingerini",
+    ginger                = "Dragon Gingerini",
+    gingerdragon          = "Dragon Gingerini",
+    dragginger            = "Dragon Gingerini",
+    dragongingerini       = "Dragon Gingerini",
+    dragonginger          = "Dragon Gingerini",
+    ging                  = "Dragon Gignerini",
+
+    -- La Supreme Combinasion
+
+    supreme = "La Supreme Combinasion",
+    lasupreme = "La Supreme Combinasion",
+    sup = "La Supreme Combinasion",
+    lasupremecombinasion = "La Supreme Combinasion",
+    lasupremecomb = "La Supreme Combinasion",
+
+    -- Ginger Gerat
+    gerat                 = "Ginger Gerat",
+    gingergerat           = "Ginger Gerat",
+
+    -- Signore Carapace
+    signore               = "Signore Carapace",
+    sig                   = "Signore Carapace",
+    signorecarapace       = "Signore Carapace",
+    carapace              = "Signore Carapace",
+
+    -- Digi Narwhal
+    digi                  = "Digi Narwhal",
+    diginarwhal           = "Digi Narwhal",
+    narwhal               = "Digi Narwhal",
+
+    -- Cerberus
+    cerberus              = "Cerberus",
+    cerb                  = "Cerberus",
+
+    -- Love Love Bear
+    bear = "Love Love Bear",
+    lovelovebear = "Love Love Bear",
+    lovebear = "Love Love Bear",
+    love = "Love Love Bear",
