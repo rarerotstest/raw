@@ -185,25 +185,27 @@ local RANDOM_EMPTY_POOL = {
 local EMPTY_SLOT_RANDOM = Random.new()
 
 local ANIMAL_SETTINGS = {
-    ["Meowl"]               = { heightOffset=41.11, overheadOffset=3 },
+    ["Meowl"]               = { heightOffset=4.11, overheadOffset=3 },
     
-    ["Dragon Cannelloni"]   = { heightOffset=14.79, overheadOffset=3 },
-    ["Strawberry Elephant"] = { heightOffset=14.49, overheadOffset=11.5 },
-    ["Skibidi Toilet"]      = { heightOffset=12.79, overheadOffset=3 },
-    ["Headless Horseman"]   = { heightOffset=41.79, overheadOffset=8,
+    ["Dragon Cannelloni"]   = { heightOffset=4.79, overheadOffset=3 },
+    ["Strawberry Elephant"] = { heightOffset=4.49, overheadOffset=1.5 },
+    ["Skibidi Toilet"]      = { heightOffset=2.79, overheadOffset=3 },
+    ["Headless Horseman"]   = { heightOffset=4.79, overheadOffset=8,
                                 overrideAttachment="BrainrotRootPartAttachment" },
 
 
 ["Garama and Madundung"]    = { heightOffset=2,    overheadOffset=1.9 },
-    ["Hydra Dragon Cannelloni"] = { heightOffset=51.89, overheadOffset=2.6 },
-    ["Dragon Gingerini"]        = { heightOffset=15.71, overheadOffset=2.1 },
-    ["Ginger Gerat"]            = { heightOffset=13.43, overheadOffset=3.1 },
-    ["Signore Carapace"]        = { heightOffset=41.65, overheadOffset=2.6 },
-    ["Digi Narwhal"]            = { heightOffset=11.89, overheadOffset=2.7 },
-    ["Cerberus"]                = { heightOffset=21.68, overheadOffset=1.9 },
-    ["Love Love Bear"]          = { heightOffset=31.28, overheadOffset=2.1 },
-    ["La Supreme Combinasion"]  = { heightOffset=31.00, overheadOffset=2.1 },
+    ["Hydra Dragon Cannelloni"] = { heightOffset=5.89, overheadOffset=2.6 },
+    ["Dragon Gingerini"]        = { heightOffset=5.71, overheadOffset=2.1 },
+    ["Ginger Gerat"]            = { heightOffset=3.43, overheadOffset=3.1 },
+    ["Signore Carapace"]        = { heightOffset=4.65, overheadOffset=2.6 },
+    ["Digi Narwhal"]            = { heightOffset=1.89, overheadOffset=2.7 },
+    ["Cerberus"]                = { heightOffset=2.68, overheadOffset=1.9 },
+    ["Love Love Bear"]          = { heightOffset=3.28, overheadOffset=2.1 },
+    ["La Supreme Combinasion"]  = { heightOffset=3.00, overheadOffset=2.1 },
+    ["Antonio"]  = { heightOffset=3.30, overheadOffset=2.1 },
 }
+
 
 local MUTATION_RULES = {
 
