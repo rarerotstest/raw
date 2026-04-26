@@ -261,7 +261,6 @@ local DRAGON_SURFACE_STRIP = {
 
 
 local NEEDS_ROTATION_TRADE = {
-    ["Dragon Cannelloni"]=true,
     ["Headless Horseman"]=true,
     ["Strawberry Elephant"]=true,
     ["Meowl"]=true,
