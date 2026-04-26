@@ -261,8 +261,20 @@ local DRAGON_SURFACE_STRIP = {
 
 
 local NEEDS_ROTATION_TRADE = {
-    ["Meowl"]=true, ["Strawberry Elephant"]=true,
-    ["Skibidi Toilet"]=true, ["Headless Horseman"]=true,
+    ["Dragon Cannelloni"]=true,
+    ["Headless Horseman"]=true,
+    ["Strawberry Elephant"]=true,
+    ["Meowl"]=true,
+    ["Skibidi Toilet"]=true,
+    ["Garama and Madundung"]=true,
+    ["Hydra Dragon Cannelloni"]=true,
+    ["Dragon Gingerini"]=true,
+    ["Ginger Gerat"]=true,
+    ["Signore Carapace"]=true,
+    ["Digi Narwhal"]=true,
+    ["Cerberus"]=true,
+    ["Love Love Bear"]=true,
+    ["La Supreme Combinasion"]=true,
 }
 
 local SELECTED_BG       = Color3.fromRGB(15, 50, 15)
