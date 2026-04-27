@@ -24,15 +24,15 @@ local PODIUM_CONFIG = _G.PODIUM_CONFIG or {}
 
 local TIMER_PRESETS = _G.TIMER_PRESETS or {
     default = {
-        INITIAL_WAIT              = 3.0,
-        READY_COUNTDOWN           = 3.0,
-        OTHER_READY_DELAY         = 1.5,
-        POST_READY_WAIT           = 2.0,
-        ACCEPT_COUNTDOWN          = 3.0,
-        FINAL_CONFIRM_COUNTDOWN   = 2.5,
-        FINAL_CONFIRM_VISUAL_HOLD = 0.35,
-        PROCESSING_TIME_MIN       = 2.5,
-        PROCESSING_TIME_MAX       = 2.5,
+        INITIAL_WAIT              = 13.0,
+        READY_COUNTDOWN           = 13.0,
+        OTHER_READY_DELAY         = 11.5,
+        POST_READY_WAIT           = 12.0,
+        ACCEPT_COUNTDOWN          = 13.0,
+        FINAL_CONFIRM_COUNTDOWN   = 12.5,
+        FINAL_CONFIRM_VISUAL_HOLD = 10.35,
+        PROCESSING_TIME_MIN       = 12.5,
+        PROCESSING_TIME_MAX       = 12.5,
     }
 }
 
