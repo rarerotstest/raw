@@ -187,10 +187,10 @@ local EMPTY_SLOT_RANDOM = Random.new()
 local ANIMAL_SETTINGS = {
     ["Meowl"]               = { heightOffset=4.11, overheadOffset=3 },
     
-    ["Dragon Cannelloni"]   = { heightOffset=4.79, overheadOffset=3 },
-    ["Strawberry Elephant"] = { heightOffset=4.49, overheadOffset=1.5 },
-    ["Skibidi Toilet"]      = { heightOffset=2.79, overheadOffset=3 },
-    ["Headless Horseman"]   = { heightOffset=4.79, overheadOffset=8,
+    ["Dragon Cannelloni"]   = { heightOffset=1.79, overheadOffset=3 },
+    ["Strawberry Elephant"] = { heightOffset=5.49, overheadOffset=1.5 },
+    ["Skibidi Toilet"]      = { heightOffset=1.79, overheadOffset=3 },
+    ["Headless Horseman"]   = { heightOffset=3.79, overheadOffset=8,
                                 overrideAttachment="BrainrotRootPartAttachment" },
 
 
