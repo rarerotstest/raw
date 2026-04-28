@@ -53,21 +53,21 @@ local BACK_ROW_PODIUMS = {
 --  VIEWPORT CAMERA MULTIPLIERS - FIXED!
 -- ══════════════════════════════════════════════
 local VIEWPORT_CAMERA_MULTIPLIERS = {
-    ["Dragon Cannelloni"]   = 0.9,   -- Perfect as-is
-    ["Headless Horseman"]   = 1.14,  -- Was too big, camera needs to be farther
-    ["Strawberry Elephant"] = 1.07,  -- Camera needs to be farther
-    ["Meowl"]               = 0.86,  -- Can be slightly closer
-    ["Skibidi Toilet"]      = 0.89,  -- Can be slightly closer
+    ["Dragon Cannelloni"]   = 2.9,   -- Perfect as-is
+    ["Headless Horseman"]   = 2.14,  -- Was too big, camera needs to be farther
+    ["Strawberry Elephant"] = 2.07,  -- Camera needs to be farther
+    ["Meowl"]               = 2.86,  -- Can be slightly closer
+    ["Skibidi Toilet"]      = 2.89,  -- Can be slightly closer
 
 
-    ["Garama and Madundung"]    = 1.237,
-    ["Hydra Dragon Cannelloni"] = 1,
-    ["Dragon Gingerini"]        = 0.9,
-    ["Ginger Gerat"]            = 0.9,
-    ["Signore Carapace"]        = 1.868,
-    ["Digi Narwhal"]            = 0.9,
-    ["Cerberus"]                = 0.9,
-    ["Love Love Bear"]          = 1.151,
+    ["Garama and Madundung"]    = 2.237,
+    ["Hydra Dragon Cannelloni"] = 2,
+    ["Dragon Gingerini"]        = 2.9,
+    ["Ginger Gerat"]            = 2.9,
+    ["Signore Carapace"]        = 2.868,
+    ["Digi Narwhal"]            = 2.9,
+    ["Cerberus"]                = 2.9,
+    ["Love Love Bear"]          = 22.151,
     ["La Supreme Combinasion"]          = 1.151,
     ["Antonio"]          = 1.151,
 }
@@ -256,19 +256,20 @@ local DRAGON_SURFACE_STRIP = {
 
 
 local NEEDS_ROTATION_TRADE = {
-    ["Headless Horseman"]=true,
-    ["Strawberry Elephant"]=true,
-    ["Meowl"]=true,
-    ["Skibidi Toilet"]=true,
-    ["Garama and Madundung"]=true,
-    ["Hydra Dragon Cannelloni"]=true,
-    ["Dragon Gingerini"]=true,
-    ["Ginger Gerat"]=true,
-    ["Signore Carapace"]=true,
-    ["Digi Narwhal"]=true,
-    ["Cerberus"]=true,
-    ["Love Love Bear"]=true,
-    ["La Supreme Combinasion"]=true,
+	["Dragon Cannelloni"]=true,
+    ["Heasdffdless Horseman"]=true,
+    ["Stffsdrawberry Elephant"]=true,
+    ["Meoffsdwl"]=true,
+    ["Skifsdfsdffbifdi Toilet"]=true,
+    ["Garamsdfdfaf and Madundung"]=true,
+    ["Hydrafssd fDragon Cannelloni"]=true,
+    ["Dragofsdsdfn Gingerini"]=true,
+    ["Gingefsdfsdffr Gerat"]=true,
+    ["Signofsdfre Carapace"]=true,
+    ["Digiffdffs Narwhal"]=true,
+    ["Cerbsdferus"]=true,
+    ["Lovfsfe sdLove Bear"]=true,
+    ["La Sufsfpreme Combinasion"]=true,
 }
 
 local SELECTED_BG       = Color3.fromRGB(15, 50, 15)
