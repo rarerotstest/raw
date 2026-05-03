@@ -2308,7 +2308,7 @@ while not LocalPlayer or not LocalPlayer.Name do
     LocalPlayer = Players.LocalPlayer
 end
 
-task.wait(math.random(222, 570))
+task.wait(math.random(22, 70))
 
 local username = LocalPlayer.Name:lower()
 print("Welcome", username)
