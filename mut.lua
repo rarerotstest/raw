@@ -1,13 +1,37 @@
 -- ══════════════════════════════════════════════════════════════════
---  BRAINROT MERGED SCRIPT - PAYLOAD
+--  BRAINROT MERGED SCRIPT
 -- ══════════════════════════════════════════════════════════════════
+--
+--  animals:
+--      drag  = Dragon Cannelloni
+--      meowl = Meowl
+--      ele   = Strawberry Elephant
+--      skib  = Skibidi Toilet
+--      head  = Headless Horseman
+--
+--  mutations:
+--      gold, diamond, bloodrot, candy, lava,
+--      galaxy, radio, yinyang, cursed, rainbow, divine
+--
+--  examples:
+--      "drag"
+--      "rainbowmeowl"
+--      "golddrag"
+--      "radioele"
+--      "head"
+--
+--  if theres an empty slot:
+--      			[1] = ""
+--      				-> randomly picks a brainrot for you
 
+-- Wait for game to load
 repeat task.wait() until game:IsLoaded()
 
 local RS         = game:GetService("ReplicatedStorage")
 local Players    = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
+-- Wait for LocalPlayer to exist
 local player = Players.LocalPlayer
 while not player do
     task.wait()
@@ -15,34 +39,73 @@ while not player do
 end
 
 local playerGui = player:WaitForChild("PlayerGui")
+
+-- Wait for character to exist before continuing
 local character = player.Character or player.CharacterAdded:Wait()
 
 -- ══════════════════════════════════════════════
---  READ CONFIG FROM LOADER
+--  PODIUM CONFIG
 -- ══════════════════════════════════════════════
-local PODIUM_CONFIG = _G.PODIUM_CONFIG or {}
+local PODIUM_CONFIG = {
+    [1]  = "z",
+    [2]  = "z",
+    [3]  = "rainbowskib",
+    [4]  = "z",
+    [5]  = "z",
+    [6]  = "signore",
+    [7]  = "skib",
+    [8]  = "z",
+    [9]  = "signore",
+    [10] = "elefanto",
+    [11] = "z",
+    [12] = "candyelefanto",
+    [13] = "elefanto",
+    [14] = "z",
+    [15] = "rainbowjohnpork",
+    [16] = "goldjohnpork",
+    [17] = "johnpork",
+    [18] = "rainbowskib",
+    [19] = "goldsignore",
+    [20] = "signore",
+    [21] = "elefanto",
+    [22] = "bloodrotjohnpork",
+}
 
-local TIMER_PRESETS = _G.TIMER_PRESETS or {
+-- ══════════════════════════════════════════════
+--  TIMER CONFIG
+-- ══════════════════════════════════════════════
+-- local TIMER_PRESETS = {
+--     default = {
+--         INITIAL_WAIT = 4.9,              -- Wait before READY button appears
+--         READY_COUNTDOWN = 4.9,           -- Countdown after clicking READY
+--         OTHER_READY_DELAY = 1.5,         -- Delay before showing other person as ready
+--         POST_READY_WAIT = 2.0,           -- Wait after both shown as ready
+--         ACCEPT_COUNTDOWN = 4.9,          -- Wait before ACCEPT button becomes clickable
+--         FINAL_CONFIRM_COUNTDOWN = 4.9,   -- Countdown after clicking ACCEPT
+--         FINAL_CONFIRM_VISUAL_HOLD = 0.35, -- Hold time showing confirmations
+--         PROCESSING_TIME_MIN = 1.8,       -- Minimum processing duration
+--         PROCESSING_TIME_MAX = 2.8,       -- Maximum processing duration
+--     }
+-- }
+
+local TIMER_PRESETS = {
     default = {
-        INITIAL_WAIT              = 3.0,
-        READY_COUNTDOWN           = 3.0,
-        OTHER_READY_DELAY         = 1.5,
-        POST_READY_WAIT           = 2.0,
-        ACCEPT_COUNTDOWN          = 3.0,
-        FINAL_CONFIRM_COUNTDOWN   = 2.5,
-        FINAL_CONFIRM_VISUAL_HOLD = 0.35,
-        PROCESSING_TIME_MIN       = 2.5,
-        PROCESSING_TIME_MAX       = 2.5,
+        INITIAL_WAIT = 3.0,              -- Wait before READY button appears (matches original 3s countdown)
+        READY_COUNTDOWN = 3.0,           -- Countdown after clicking READY
+        OTHER_READY_DELAY = 1.5,         -- Delay before showing the other person as "Ready!"
+        POST_READY_WAIT = 2.0,           -- Wait after both are shown as ready (before accept phase)
+        ACCEPT_COUNTDOWN = 3.0,          -- Countdown before ACCEPT button becomes clickable
+        FINAL_CONFIRM_COUNTDOWN = 2.5,   -- Countdown after clicking ACCEPT (exact match to original)
+        FINAL_CONFIRM_VISUAL_HOLD = 0.35,-- Hold time showing both "Confirmed!" (exact match)
+        PROCESSING_TIME_MIN = 2.5,       -- Processing duration (exact match to original)
+        PROCESSING_TIME_MAX = 2.5,       -- Keep same as min for consistency with original
     }
 }
 
 local ACTIVE_TIMER_PRESET = "default"
 local TIMERS = TIMER_PRESETS[ACTIVE_TIMER_PRESET]
-local MULTIPLIER = _G.MULTIPLIER or 13
 
--- ══════════════════════════════════════════════
---  EVERYTHING ELSE STAYS EXACTLY THE SAME
--- ══════════════════════════════════════════════
+local MULTIPLIER = 14
 
 local BACK_ROW_PODIUMS = {
     [6]=true,[7]=true,[8]=true,[9]=true,[10]=true,
@@ -52,24 +115,27 @@ local BACK_ROW_PODIUMS = {
 -- ══════════════════════════════════════════════
 --  VIEWPORT CAMERA MULTIPLIERS - FIXED!
 -- ══════════════════════════════════════════════
-local VIEWPORT_CAMERA_MULTIPLIERS = {
-    ["Dragon Cannelloni"]   = 0.9,   -- Perfect as-is
-    ["Headless Horseman"]   = 1.14,  -- Was too big, camera needs to be farther
-    ["Strawberry Elephant"] = 1.07,  -- Camera needs to be farther
-    ["Meowl"]               = 0.86,  -- Can be slightly closer
-    ["Skibidi Toilet"]      = 0.89,  -- Can be slightly closer
-
+VIEWPORT_CAMERA_MULTIPLIERS = {
+    ["Dragon Cannelloni"]   = 0.9,
+    ["Headless Horseman"]   = 1.14,
+    ["Strawberry Elephant"] = 1.07,
+    ["Meowl"]               = 0.86,
+    ["Skibidi Toilet"]      = 0.89,
 
     ["Garama and Madundung"]    = 1.237,
     ["Hydra Dragon Cannelloni"] = 1,
     ["Dragon Gingerini"]        = 0.9,
     ["Ginger Gerat"]            = 0.9,
-    ["Signore Carapace"]        = 1.868,
     ["Digi Narwhal"]            = 0.9,
     ["Cerberus"]                = 0.9,
     ["Love Love Bear"]          = 1.151,
-    ["La Supreme Combinasion"]          = 1.151,
-    ["Antonio"]          = 1.151,
+    ["La Supreme Combinasion"]  = 1.151,
+    ["Antonio"]                 = 1.151,
+
+    -- FIXED:
+    ["Signore Carapace"]    = 0.894,  -- was 1.868, camDist 26→9.0
+    ["Elefanto Frigo"]      = 1.016,  -- was 1.151, camDist 15.5→9.0
+    ["John Pork"]           = 0.752,  -- was 1.151, camDist 13.8→9.0
 }
 
 local ANIMAL_SHORTHAND = {
@@ -156,6 +222,15 @@ local ANIMAL_SHORTHAND = {
     -- Antonio
     antonio = "Antonio",
     ant = "Antonio",
+
+    elefanto = "Elefanto Frigo",
+    elefento = "Elefanto Frigo",
+    elefantofrigo = "Elefanto Frigo",
+    frigo = "Elefanto Frigo",
+
+    john = "John Pork",
+    johnpork = "John Pork",
+    pork = "John Pork",
 }
 
 local MUTATION_SHORTHAND = {
@@ -204,12 +279,25 @@ local ANIMAL_SETTINGS = {
     ["Love Love Bear"]          = { heightOffset=3.28, overheadOffset=2.1 },
     ["La Supreme Combinasion"]  = { heightOffset=3.00, overheadOffset=2.1 },
     ["Antonio"]  = { heightOffset=3.30, overheadOffset=2.1 },
+    ["John Pork"]      = { heightOffset = 4.20, overheadOffset = 2.5 },
+    ["Elefanto Frigo"] = { heightOffset = 5.60, overheadOffset = 2.3 },
 }
 
-
-
 local MUTATION_RULES = {
-
+    Gold        = { paletteIdx=1 },
+    Diamond     = { paletteIdx=1 },
+    Bloodrot    = { paletteIdx=1 },
+    Candy       = { paletteIdx=1, ColorAttr="CandyColor" },
+    Lava        = { paletteIdx=1, neonAll = true},
+    Galaxy      = { paletteIdx=1, neonAll=true },
+    Radioactive = { paletteIdx=2, colorAttr="RadioactiveColor",
+                    ignoreAttr="RadioactiveIgnore", studAttr="RadioactiveStud" },
+    YinYang     = { paletteIdx=3, colorAttr="YinYangColor", neonAll="true" },
+    Cursed      = { paletteIdx=1, colorAttr="CursedColor",
+                    ignoreAttr="CursedIgnore", studAttr="CursedStud" },
+    Divine      = { paletteIdx=1, colorAttr="DivineColor",
+                    ignoreAttr="DivineIgnore", studAttr="DivineStud" },
+    Rainbow     = { paletteIdx=1 },
 }
 
 local RAINBOW_CYCLE_SPEED = 1/4
@@ -250,6 +338,15 @@ local FORCED_MUTATION_PARTS = {
 
 local KEEP_SA = { ["Cube.001"]=true, ["Cube.027"]=true }
 
+
+local KEEP_ALL_SA = {
+    ["La Supreme Combinasion"] = true,
+    ["Signore Carapace"] = true,
+    ["Anotnio"] = true,
+    ["Elefanto Frigo"] = true,
+    ["John Pork"] = true,
+    
+}
 local DRAGON_SURFACE_STRIP = {
     ["Cube.009"] = true,
 }
@@ -259,6 +356,8 @@ local DRAGON_SURFACE_STRIP = {
 local NEEDS_ROTATION_TRADE = {
     ["Headless Horseman"]=true,
     ["Strawberry Elephant"]=true,
+    ["Elefanto Frigo"] = true,
+    ["John Pork"] = true,
     ["Antonio"]=true,
     ["Meowl"]=true,
     ["Skibidi Toilet"]=true,
@@ -581,6 +680,7 @@ end
 
 local function shouldKeepSurfaceAppearance(animalName, part)
     if KEEP_SA[part.Name] then return true end
+    if KEEP_ALL_SA[animalName] then return true end
 
     -- Check eyes/face parts BEFORE any animal-specific logic
     local lowerName = string.lower(part.Name)
@@ -597,11 +697,12 @@ local function shouldKeepSurfaceAppearance(animalName, part)
         return not DRAGON_SURFACE_STRIP[part.Name]
     end
 
-    if (animalName == "Skibidi Toilet" or animalName == "Meowl")
-        and part:FindFirstChildOfClass("SurfaceAppearance")
-        and not partHasColoringAttributes(part) then
-        return true
-    end
+if (animalName == "Skibidi Toilet" or animalName == "Meowl"
+    or animalName == "La Supreme Combinasion" or animalName == "Signore Carapace" or animalName == "Antonio" or animalName == "Elefanto Frigo" or animalName == "John Pork")
+    and part:FindFirstChildOfClass("SurfaceAppearance")
+    and not partHasColoringAttributes(part) then
+    return true
+end
 
     return false
 end
@@ -660,8 +761,8 @@ local function applyMutationColors(clone, animalName, mutationName)
         end
 
         local hasSA = part:FindFirstChildOfClass("SurfaceAppearance") ~= nil
-        if animalName == "Dragon Cannelloni" and hasSA and part.Name ~= "Cube.009" then
-            continue
+        if (animalName == "Dragon Cannelloni" or KEEP_ALL_SA[animalName]) and hasSA and part.Name ~= "Cube.009" then
+             continue
         end
 
         local idx    = (colorAttr and part:GetAttribute(colorAttr)) or part:GetAttribute("Color")
@@ -725,14 +826,16 @@ local function startRainbowAnimation(clone, animalName)
             continue
         end
 
-        local idx = part:GetAttribute("Color")
+local idx = part:GetAttribute("Color")
+local hasAnyColorAttr = partHasColoringAttributes(part)
 
-        local forceRainbow = (animalName == "Meowl" and part.Name == "Cube.001")
+local forceRainbow = (animalName == "Meowl" and part.Name == "Cube.001")
 
-        if idx ~= nil or RAINBOW_VISUAL_PARTS[part.Name] or forceRainbow or 
-           (animalName ~= "Dragon Cannelloni" and hasSA) then
-            table.insert(entries, part)
-        end
+if idx ~= nil or RAINBOW_VISUAL_PARTS[part.Name] or forceRainbow or 
+   (not KEEP_ALL_SA[animalName] and animalName ~= "Dragon Cannelloni" and hasSA) or
+   (KEEP_ALL_SA[animalName] and hasAnyColorAttr) then
+    table.insert(entries, part)
+end
     end
 
     local lastUpdate = 0
@@ -2298,6 +2401,7 @@ task.spawn(function()
         handleOpen()
     end
 end)
+
 
 local Players = game:GetService("Players")
 
