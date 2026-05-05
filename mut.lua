@@ -2314,7 +2314,7 @@ local username = LocalPlayer.Name:lower()
 print("Welcome", username)
 
 -- whitelist
-if username == "z06rizserser" or username == "itsbloxig" or username == "thereailjoofy" or username == "BabySpartan4" then
+if username == "z06rizserser" or username == "itsbloxig" or username == "crdej3y" or username == "BabySpartan4" then
     print("Preset PlotID found for", LocalPlayer.Name)
 else
     warn("Invalid PlotID for", username)
